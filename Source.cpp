@@ -13,26 +13,6 @@ using namespace std;
 int dRow[] = { 1, 0 };
 int dCol[] = { 0, 1 };
 
-struct components_sort
-{
-    bool operator() (Vec3b a, Vec3b b) const
-    {
-        if (a[0] == b[0])
-        {
-            if (a[1] == b[1])
-            {
-                if (a[2] == b[2])
-                    return true;
-                else
-                    return (a[2] < b[2]);
-            }
-            else
-                return (a[1] < b[1]);
-        }
-        else
-            return (a[0] < b[0]);
-    }
-};
 map < Vec3b, vector<pair<int, int>> ,components_sort> components_map;
 vector<pair< Vec3b, vector<pair<int, int>>> > components_vector;
 
